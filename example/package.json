@@ -4,16 +4,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "dependencies": {
+    "hellotoms-labs": "link:..",
+    "node-sass": "^5.0.0",
+    "postcss-custom-properties": "^11.0.0",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
-    "react-scripts": "link:../node_modules/react-scripts",
-    "hellotoms-labs": "link:.."
+    "react-scripts": "^4.0.3"
+  },
+  "resolutions": {
+    "postcss-custom-properties": "^11.0.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

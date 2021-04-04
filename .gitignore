@@ -4,9 +4,12 @@
 # dependencies
 node_modules
 
+# testing repository
+example
+
 # builds
 build
-dist
+lib
 .rpt2_cache
 
 # misc
