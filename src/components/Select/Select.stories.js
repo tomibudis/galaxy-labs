@@ -11,4 +11,3 @@ const Template = (args) => <Select {...args} />;
 
 export const SelectTest = Template.bind({});
 SelectTest.args = {};
-

@@ -2,6 +2,6 @@ build/
 dist/
 lib/
 node_modules/
-
+src/assets/
 .snapshots/
 *.min.js

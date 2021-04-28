@@ -13,13 +13,9 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=dev rollup -c -w",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
+    "prepare": "run-s build && husky install",
+    "commit": "npx git-cz",
+    "lint": "eslint --ignore-path .eslintIgnore . --fix",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -47,7 +43,9 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-flowtype": "^5.7.2",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
@@ -74,5 +72,19 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "postcss": "^8.2.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["eslint --fix", "prettier --write"]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
