@@ -12,7 +12,7 @@ const root = process.platform === 'win32' ? path.resolve('/') : '/';
  * Externals
  * @type {(id: string) => void}
  */
-const external = id => {
+const external = (id) => {
   return !id.startsWith('.') && !id.startsWith(root);
 };
 
@@ -22,35 +22,35 @@ const getBabelOptions = ({ useESModules }) => ({
   exclude: '**/node_modules/**',
   extensions: ['.ts', '.tsx', '.js', '.jsx'],
   runtimeHelpers: true,
-  plugins: [['@babel/plugin-transform-runtime', { useESModules }]]
+  plugins: [['@babel/plugin-transform-runtime', { useESModules }]],
 });
 
 const getSharedRollupPlugins = ({ extractCSS }) => [
   nodeResolve({
     extensions: ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx'],
-    dedupe: ['react', 'react-dom']
+    dedupe: ['react', 'react-dom'],
   }),
   postcss({
     extract: extractCSS,
     inject: extractCSS,
-    autoModules: true,
+    modules: true,
     minimize: true,
-  })
+  }),
 ];
 
 const cjs = [
   {
     input,
     output: {
-      file: `lib/cjs/${pkg.name}.js`,
-      format: 'cjs'
+      file: `lib/${pkg.name}.cjs`,
+      format: 'cjs',
     },
     external,
     plugins: [
       babel(getBabelOptions({ useESModules: false })),
       ...getSharedRollupPlugins({ extractCSS: false }),
-    ]
-  }
+    ],
+  },
 ];
 
 const esm = [
@@ -58,17 +58,17 @@ const esm = [
     input,
     external,
     output: {
-      file: `lib/esm/${pkg.name}.js`,
-      format: 'esm'
+      file: `lib/${pkg.name}.esm.js`,
+      format: 'esm',
     },
     plugins: [
       babel(getBabelOptions({ useESModules: true })),
       ...getSharedRollupPlugins({
-        extractCSS: true
+        extractCSS: `styles.css`,
       }),
       filesize(),
-    ]
-  }
+    ],
+  },
 ];
 
 let config;

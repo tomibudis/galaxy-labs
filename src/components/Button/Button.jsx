@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import styles from './styles.module.scss';
+import styles from './styles.scss';
 
-const Button = () => <div className={styles.own}>Button Components</div>
+const Button = () => <button className={styles.own}>Button Components</button>;
 
 export default memo(Button);
