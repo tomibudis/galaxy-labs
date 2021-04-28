@@ -11,4 +11,3 @@ const Template = (args) => <Modal {...args} />;
 
 export const ModalPrimary = Template.bind({});
 ModalPrimary.args = {};
-

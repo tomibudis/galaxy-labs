@@ -9,5 +9,8 @@ module.exports = {
       presets: [['@babel/preset-env', { loose: true, modules: 'commonjs' }]],
       plugins: ['@babel/plugin-transform-runtime'],
     },
+    production: {
+      plugins: ['transform-react-remove-prop-types'],
+    },
   },
 };

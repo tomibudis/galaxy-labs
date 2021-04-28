@@ -1,5 +1,15 @@
-import React, { memo } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Modal = () => <div>Modal Components</div>
+const Modal = () => <div>Modal Components</div>;
 
-export default memo(Modal);
+Modal.defaultProps = {
+  isVisible: false,
+};
+
+Modal.propTypes = {
+  /** show hide the modal */
+  isVisible: PropTypes.bool,
+};
+
+export default Modal;
