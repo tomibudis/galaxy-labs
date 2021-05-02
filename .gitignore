@@ -4,11 +4,8 @@
 # dependencies
 node_modules
 
-# testing repository
-example
-
 # builds
-build
+storybook-static
 lib
 .rpt2_cache
 
