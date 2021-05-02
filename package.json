@@ -1,15 +1,15 @@
 {
   "name": "galaxy-labs",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "base ui elements based on react component",
   "author": "tomibudis",
   "license": "MIT",
-  "repository": "tomibudis/hellotoms-labs",
-  "module": "./lib/esm/hellotoms-labs.js",
-  "main": "./lib/cjs/hellotoms-labs.js",
-  "files": [
-    "lib"
-  ],
+  "repository": "tomibudis/galaxy-labs",
+  "module": "./lib/esm/galaxy-labs.js",
+  "main": "./lib/cjs/galaxy-labs.js",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=dev rollup -c -w",
@@ -18,7 +18,8 @@
     "lint": "eslint --ignore-path .eslintIgnore . --fix",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -69,6 +70,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^4.0.0",
     "sass-loader": "^10.0.0",
+    "semantic-release": "^17.4.2",
+    "semantic-release-cli": "^5.4.3",
     "style-loader": "^2.0.0"
   },
   "dependencies": {
