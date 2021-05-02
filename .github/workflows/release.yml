@@ -5,13 +5,12 @@ on:
       - master
 jobs:
   release:
-    name: Release
+    name: Deploy docs and Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - uses: actions/checkout@v2
+        run: git config -g user.email "tomibudis@gmail.com"
+        run: git config -g user.name "tomibudis"
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
