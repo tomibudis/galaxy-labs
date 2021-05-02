@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Setup config
-        run: |
-          git config --global user.email "tomibudis@gmail.com"
-          git config --global user.name "tomibudis"
+        - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+        - uses: webfactory/ssh-agent@v0.5.2
+          with:
+              ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          run: echo ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
