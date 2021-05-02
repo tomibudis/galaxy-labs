@@ -13,14 +13,17 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup config
-        run: git config -g user.email "tomibudis@gmail.com"
-        run: git config -g user.name "tomibudis"
+        run: |
+          git config -g user.email "tomibudis@gmail.com"
+          git config -g user.name "tomibudis"
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
       - name: Install dependencies
-        run: yarn install
+        run: |
+          yarn install
+          yarn build-storybook
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
