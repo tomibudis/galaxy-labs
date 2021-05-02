@@ -16,8 +16,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install dependencies
-        run: yarn install
+      - name: yarn install, build storybook
+        run: |
+          yarn install
+          yarn build-storybook
+      - name: Deploy docs
+        run: yarn deploy-docs
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
