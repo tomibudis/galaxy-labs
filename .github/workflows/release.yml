@@ -8,14 +8,18 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Debug
+         run: |
+          echo ${{ secrets.SSH_PRIVATE_KEY }}
+          echo ${{ secrets.GH_TOKEN }}
+          echo ${{ secrets.GITHUB_TOKEN }}
+          echo ${{ secrets.NPM_TOKEN }}
+          echo ${{ secrets }}
       - name: Checkout
         - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
         - uses: webfactory/ssh-agent@v0.5.2
           with:
-              ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          run: echo ${{ secrets.SSH_PRIVATE_KEY }}
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
