@@ -4,6 +4,7 @@ import styles from './styles.scss';
 
 const Button = ({ isLoading }) => (
   <button className={styles.own}>
+    Awesome
     {isLoading ? 'loading..' : 'Button Components'}
   </button>
 );
