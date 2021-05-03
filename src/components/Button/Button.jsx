@@ -4,7 +4,7 @@ import styles from './styles.scss';
 
 const Button = ({ isLoading }) => (
   <button className={styles.own}>
-    {isLoading ? 'loading..' : 'Button Components'}
+    {isLoading ? 'loading...' : 'Button Components'}
   </button>
 );
 
