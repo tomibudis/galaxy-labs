@@ -7,23 +7,30 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.5.2
+      - uses: webfactory/ssh-agent@v0.4.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup git
+        run: |
+          git config user.email "tomibudis@gmail.com"
+          git config user.name "tomibudis"
+          git remote set-url origin git@github.com:tomibudis/galaxy-labs.git
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: yarn install, build storybook
+      - name: Install, Build, Deploy
         run: |
           yarn install
           yarn build-storybook
-      - name: Deploy docs
-        run: yarn deploy-docs
+          yarn deploy-docs
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
