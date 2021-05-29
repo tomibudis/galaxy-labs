@@ -1,0 +1,16 @@
+@import '../assets/scss/variables';
+
+.btn {
+  border-radius: .7rem;
+  padding: .4rem 1.1rem;
+}
+
+.btn-primary:hover {
+  background-color: $purple-600;
+  border-color: $purple-600;
+}
+
+.btn-secondary:hover {
+  background-color: $gray-300;
+  border-color: $gray-300
+}

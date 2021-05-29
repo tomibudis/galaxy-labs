@@ -5,3 +5,6 @@ node_modules/
 src/assets/
 .snapshots/
 *.min.js
+
+# Ignore unit test
+.test.js

@@ -12,10 +12,11 @@
   },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
-    "start": "NODE_ENV=dev rollup -c -w",
+    "build:watch": "NODE_ENV=dev rollup -c -w",
     "prepare": "run-s build && husky install",
     "commit": "npx git-cz",
     "lint": "eslint --ignore-path .eslintIgnore . --fix",
+    "test": "jest --env=jsdom",
     "deploy-docs": "gh-pages --message \"Automatically updated docs\" -d storybook-static",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -27,19 +28,29 @@
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/plugin-transform-runtime": "^7.13.10",
-    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^7.3.1",
     "@commitlint/config-conventional": "^7.3.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.1",
+    "@semantic-release/npm": "^7.1.1",
     "@storybook/addon-actions": "^6.2.2",
     "@storybook/addon-essentials": "^6.2.2",
     "@storybook/addon-links": "^6.2.2",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.2.2",
+    "@testing-library/react": "^11.2.7",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "5.0.0-beta3",
+    "classnames": "^2.3.1",
     "commitizen": "^4.2.3",
     "cross-env": "^7.0.2",
     "css-loader": "^5.2.0",
@@ -57,29 +68,26 @@
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^3.1.0",
     "husky": "^6.0.0",
+    "jest": "^27.0.2",
     "lint-staged": "^10.5.4",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.9",
     "postcss-modules": "^4.0.0",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-test-renderer": "^17.0.2",
     "rollup": "^2.44.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^4.0.0",
     "sass-loader": "^10.0.0",
     "semantic-release": "^17.4.2",
     "semantic-release-cli": "^5.4.3",
-    "style-loader": "^2.0.0",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.2.1",
-    "@semantic-release/npm": "^7.1.1",
-    "classnames": "^2.3.1",
-    "postcss": "^8.2.9"
+    "style-loader": "^2.0.0"
   },
   "husky": {
     "hooks": {
@@ -97,5 +105,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.5.0"
   }
 }

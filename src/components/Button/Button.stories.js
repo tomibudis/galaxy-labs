@@ -4,12 +4,23 @@ import Button from './Button';
 export default {
   title: 'Components/Button',
   component: Button,
+  argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => {
+  return <Button {...args}>{args.theme}</Button>;
+};
 
-export const ButtonPrimary = Template.bind({});
-ButtonPrimary.args = {};
-
-export const ButtonBlock = Template.bind({});
-ButtonBlock.args = {};
+export const TypeButton = Template.bind({});
+TypeButton.parameters = {
+  controls: { exclude: ['isLoading'] },
+};
+TypeButton.args = {
+  theme: 'primary',
+};

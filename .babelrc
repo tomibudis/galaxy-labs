@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    ["module-resolver", {
+      "root": ["."],
+      "cwd": "packagejson",
+      "alias": {
+        "#assets": "./src/assets",
+        "#components": "./src/components",
+        "#styles": "./src/styles",
+        "#widgets": "./src/widgets",
+        "#constants": "./src/constants"
+      }
+    }]
+  ]
+}

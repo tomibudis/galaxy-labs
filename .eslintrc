@@ -23,6 +23,17 @@
       "version": "16"
     }
   },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
     "space-before-function-paren": 0,
     "react/prop-types": 0,

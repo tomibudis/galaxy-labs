@@ -7,9 +7,10 @@ import {
   Stories,
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
+import '../lib/styles.css';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   controls: {
     matchers: {
@@ -31,4 +32,4 @@ export const parameters = {
       </>
     ),
   },
-}
+};

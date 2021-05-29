@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
+import copy from 'rollup-plugin-copy';
 import path from 'path';
 
 import pkg from './package.json';
@@ -33,8 +34,10 @@ const getSharedRollupPlugins = ({ extractCSS }) => [
   postcss({
     extract: extractCSS,
     inject: extractCSS,
-    modules: true,
     minimize: true,
+  }),
+  copy({
+    targets: [{ src: ['./src/assets/font/*'], dest: 'lib' }],
   }),
 ];
 
