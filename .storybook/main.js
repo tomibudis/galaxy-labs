@@ -43,6 +43,22 @@ module.exports = {
       ],
     });
 
+    config.module.rules.unshift({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: {
+                removeViewBox: false,
+              },
+            },
+          },
+        },
+      ],
+    });
+
     config.module.rules.push({
       test: /\.tsx?$/,
       use: require.resolve('babel-loader'),

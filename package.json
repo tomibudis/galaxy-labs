@@ -18,7 +18,7 @@
     "lint": "eslint --ignore-path .eslintIgnore . --fix",
     "test": "jest --env=jsdom",
     "deploy-docs": "gh-pages --message \"Automatically updated docs\" -d storybook-static",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --no-dll -s ./public",
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release"
   },
@@ -43,6 +43,7 @@
     "@storybook/addon-links": "^6.2.2",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.2.2",
+    "@svgr/webpack": "^5.5.0",
     "@testing-library/react": "^11.2.7",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^27.0.2",
