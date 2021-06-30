@@ -30,4 +30,9 @@ describe('<Icon />', () => {
     const { baseElement } = render(<IconComponent className="mx-auto" />);
     expect(baseElement.querySelector('.mx-auto')).toBeTruthy();
   });
+
+  it('matched with snapshot file', () => {
+    const { baseElement } = render(<IconComponent />);
+    expect(baseElement).toMatchSnapshot();
+  });
 });
