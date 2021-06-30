@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 
 const path = 'https://raw.githubusercontent.com/twbs/icons/main/icons/';
 const format = '.svg';
+export const ICON_TESTID = 'icon-testid';
 
 const Icon = ({ name, className, size }) => {
   const source = useMemo(() => {
@@ -16,6 +17,7 @@ const Icon = ({ name, className, size }) => {
 
   return (
     <img
+      data-testid={ICON_TESTID}
       src={source}
       className={cx(className, {
         [styles.iconSm]: size === SIZE.SM,
