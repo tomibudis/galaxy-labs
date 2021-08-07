@@ -7,7 +7,17 @@ export default {
   component: Select,
 };
 
-const Template = (args) => <Select {...args} />;
+const Template = (args) => (
+  <div style={{ width: '200px' }}>
+    <Select {...args} />
+  </div>
+);
 
-export const SelectTest = Template.bind({});
-SelectTest.args = {};
+export const SelectExample = Template.bind({});
+SelectExample.args = {
+  options: [
+    { label: 'test 1', value: 'test1' },
+    { label: 'test 2', value: 'test2' },
+  ],
+  isClearable: true,
+};
