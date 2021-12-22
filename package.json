@@ -91,12 +91,15 @@
     "sass-loader": "^10.0.0",
     "semantic-release": "^17.4.2",
     "semantic-release-cli": "^5.4.3",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   },
   "dependencies": {
     "react-select": "^4.3.1",
-    "@testing-library/jest-dom": "^5.14.1",
-    "bootstrap-icons": "^1.5.0"
+    "bootstrap-icons": "^1.5.0",
+    "react-spring": "^9.2.4",
+    "@testing-library/jest-dom": "^5.14.1"
   },
   "husky": {
     "hooks": {
@@ -108,7 +111,9 @@
     "*.{js,jsx}": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
   },
   "config": {
     "commitizen": {

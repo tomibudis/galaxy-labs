@@ -1,8 +1,8 @@
 @import '../assets/scss/variables';
 
 .btn {
-  border-radius: .7rem;
-  padding: .4rem 1.1rem;
+  border-radius: 0.7rem;
+  padding: 0.4rem 1.1rem;
 }
 
 .btn-primary:hover {
@@ -12,5 +12,18 @@
 
 .btn-secondary:hover {
   background-color: $gray-300;
-  border-color: $gray-300
+  border-color: $gray-300;
+}
+
+.modal-content {
+  border-radius: 18px;
+  border: none;
+}
+
+.modal-header {
+  border-top: none;
+}
+
+.modal-footer {
+  border-bottom: none;
 }
