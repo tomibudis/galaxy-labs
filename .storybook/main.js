@@ -5,6 +5,9 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-postcss',
   ],
+  typescript: {
+    reactDocgen: 'react-docgen',
+  },
   webpackFinal: async (config, { configType }) => {
     const isProduction = configType === 'PRODUCTION';
 

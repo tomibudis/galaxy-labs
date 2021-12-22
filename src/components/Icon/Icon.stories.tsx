@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Meta, ComponentStory } from '@storybook/react';
+
 import Icon from '.';
 import icons from '../../constants/icons.json';
 
@@ -17,9 +20,9 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
-const renderIcon = (name, size) => {
+const renderIcon = (name, size): JSX.Element => {
   return (
     <div
       className="d-flex flex-column justify-content-center m-2"
@@ -31,7 +34,7 @@ const renderIcon = (name, size) => {
   );
 };
 
-const Template = (args) => {
+const Template: ComponentStory<typeof Icon> = (args) => {
   return (
     <div
       style={{ width: '600px' }}
@@ -45,7 +48,6 @@ const Template = (args) => {
 };
 
 export const TypeIcon = Template.bind({});
-
 TypeIcon.args = {
   size: 'lg',
 };

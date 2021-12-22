@@ -10,6 +10,11 @@ import {
 import '../lib/styles.css';
 
 export const parameters = {
+  previewTabs: {
+    canvas: {
+      hidden: true,
+    },
+  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   controls: {
@@ -27,7 +32,6 @@ export const parameters = {
         <Description />
         <Primary />
         <Stories />
-        PropTypes
         <ArgsTable story={PRIMARY_STORY} />
       </>
     ),

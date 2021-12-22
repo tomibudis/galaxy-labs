@@ -4,6 +4,7 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
 import path from 'path';
+import { terser } from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
@@ -17,7 +18,7 @@ const external = (id) => {
   return !id.startsWith('.') && !id.startsWith(root);
 };
 
-const input = './src/index.js';
+const input = './src/index.ts';
 
 const getBabelOptions = ({ useESModules }) => ({
   exclude: '**/node_modules/**',
@@ -37,7 +38,31 @@ const getSharedRollupPlugins = ({ extractCSS }) => [
     minimize: true,
   }),
   copy({
-    targets: [{ src: ['./src/assets/font/*'], dest: 'lib' }],
+    targets: [
+      { src: ['./src/assets/font/*'], dest: 'lib' },
+      { src: 'LICENSE', dest: 'lib' },
+      { src: 'README.md', dest: 'lib' },
+      {
+        src: 'package.json',
+        dest: 'lib',
+        transform: (content) => {
+          const {
+            scripts,
+            devDependencies,
+            husky,
+            release,
+            engines,
+            ...keep
+          } = JSON.parse(content.toString());
+          return JSON.stringify(keep, null, 2);
+        },
+      },
+    ],
+  }),
+  terser({
+    output: {
+      comments: false,
+    },
   }),
 ];
 

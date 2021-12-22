@@ -8,7 +8,7 @@ afterEach(() => {
   cleanup();
 });
 
-const HeadingComponent = (props) => {
+const HeadingComponent = (props): JSX.Element => {
   return <Heading {...props}>{props?.children || 'Hello Heading..'}</Heading>;
 };
 

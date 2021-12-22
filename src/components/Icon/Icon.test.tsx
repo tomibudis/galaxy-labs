@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
 });
 
-const IconComponent = (props) => {
+const IconComponent = (props): JSX.Element => {
   return <Icon {...props} name="youtube" />;
 };
 

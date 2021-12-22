@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Meta, ComponentStory } from '@storybook/react';
+
 import Button from './Button';
 
 export default {
@@ -11,16 +14,14 @@ export default {
       },
     },
   },
-};
+} as Meta<typeof Button>;
 
-const Template = (args) => {
-  return <Button {...args}>{args.theme}</Button>;
+const Template: ComponentStory<typeof Button> = (args) => {
+  return <Button {...args}>{args.variant}</Button>;
 };
 
 export const TypeButton = Template.bind({});
-TypeButton.parameters = {
-  controls: { exclude: ['isLoading'] },
-};
 TypeButton.args = {
-  theme: 'primary',
+  variant: 'primary',
+  isLoading: false,
 };
