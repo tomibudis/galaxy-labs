@@ -96,9 +96,10 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "dependencies": {
+    "react-select": "^4.3.1",
     "bootstrap-icons": "^1.5.0",
-    "react-spring": "^9.2.4"
-    "@testing-library/jest-dom": "^5.14.1",
+    "react-spring": "^9.2.4",
+    "@testing-library/jest-dom": "^5.14.1"
   },
   "husky": {
     "hooks": {
