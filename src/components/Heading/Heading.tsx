@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { HeadingProps } from '../../interface';
+import { HeadingProps } from '#interface/index';
 
 export const TESTID = 'heading-testid';
 

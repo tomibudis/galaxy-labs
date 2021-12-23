@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { THEME, SIZE } from '#constants/index';
-import { ButtonProps } from '../../interface';
+import { ButtonProps } from '#interface/index';
 
 export const TESTID = {
   BTN: 'btnTestID',

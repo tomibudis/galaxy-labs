@@ -4,7 +4,7 @@ module.exports = {
   coveragePathIgnorePatterns: ['<rootDir>/src/types', '.stories'],
   setupFiles: ['<rootDir>/jest.setup.js'],
   transform: {
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     '.+\\.(css|sass|scss)$':
       '<rootDir>/node_modules/jest-css-modules-transform',
   },

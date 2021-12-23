@@ -10,7 +10,9 @@ exports[`<Button /> matched with snapshot file 1`] = `
     >
       <span
         class="ml-3"
-      />
+      >
+        Test Component
+      </span>
     </button>
   </div>
 </body>

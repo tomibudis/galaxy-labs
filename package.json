@@ -1,7 +1,7 @@
 {
   "name": "galaxy-labs",
   "version": "0.0.0-development",
-  "description": "base ui elements based on react component",
+  "description": "ui elements based on react component",
   "author": "tomibudis",
   "license": "MIT",
   "repository": "tomibudis/galaxy-labs",
@@ -21,7 +21,7 @@
     "storybook": "start-storybook -p 6006 --no-dll -s ./src/assets",
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release",
-    "build:types": "npx tsc --emitDeclarationOnly"
+    "build:types": "npx tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -98,6 +98,7 @@
     "semantic-release": "^17.4.2",
     "semantic-release-cli": "^5.4.3",
     "style-loader": "^2.0.0",
+    "tsc-alias": "^1.5.0",
     "typescript": "^4.5.3"
   },
   "dependencies": {
@@ -115,7 +116,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],

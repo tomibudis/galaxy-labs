@@ -26,6 +26,6 @@
       "#interface/*": ["./src/interface/*", "./interface/*"]
     }
   },
-  "exclude": ["node_modules", "./node_modules", "./node_modules/*", "**/lib/", "src/components/**/*.test.tsx"],
+  "exclude": ["node_modules", "./node_modules", "./node_modules/*", "**/lib/", "src/components/**/*.test.tsx", "src/components/**/*.stories.tsx"],
   "include": ["./src"]
 }
