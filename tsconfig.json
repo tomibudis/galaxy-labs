@@ -18,12 +18,14 @@
     "strict": true,
     "target": "es5",
     "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "types": [],
     "baseUrl": ".",
     "paths": {
       "#constants/*": ["./src/constants/*"],
       "#interface/*": ["./src/interface/*", "./interface/*"]
     }
   },
-  "exclude": ["node_modules", "**/lib/"],
-  "include": ["./src"],
+  "exclude": ["node_modules", "./node_modules", "./node_modules/*", "**/lib/", "src/components/**/*.test.tsx"],
+  "include": ["./src"]
 }
