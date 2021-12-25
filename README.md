@@ -18,7 +18,7 @@ Proudly present galaxy-labs created for help front-end needs. it is a front-end 
 - React-dates https://github.com/airbnb/react-dates
 - Rollup (Bundler)
 
-This project still actively developing for some project over time and there are huge amazing component to be built
+This project still actively developing for some project over time and there are tons awesome component to be built
 
 ## Installation
 
