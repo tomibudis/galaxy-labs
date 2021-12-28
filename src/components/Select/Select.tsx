@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import RSelect from 'react-select';
 import cx from 'classnames';
 
-const Select = ({
+import { SelectProps } from '../../interface';
+
+const Select: React.FC<SelectProps> = ({
   className,
   classNamePrefix,
   defaultValue,
@@ -14,7 +16,7 @@ const Select = ({
   name,
   options,
   ...restProps
-}) => {
+}): JSX.Element => {
   return (
     <Fragment>
       <RSelect
@@ -32,18 +34,22 @@ const Select = ({
             background: 'orange',
             display: 'none',
           }),
-          menuPortal: (base) => ({ ...base, zIndex: 999, background: 'red' }),
-          control: (base) => ({
+          menuPortal: (base): any => ({
+            ...base,
+            zIndex: 999,
+            background: 'red',
+          }),
+          control: (base): any => ({
             ...base,
             boxShadow: 'none',
             backgroundColor: '#ffffff',
             borderColor: '#e2e5ec',
           }),
-          menu: (provided, state) => ({
+          menu: (provided): any => ({
             ...provided,
             margin: 0,
           }),
-          option: (styles, { isSelected }) => {
+          option: (styles, { isSelected }): any => {
             const primaryColor = '#6f42c1';
             return {
               ...styles,
@@ -65,20 +71,29 @@ const Select = ({
 };
 
 Select.propTypes = {
+  /** Key of field selecct */
   name: PropTypes.string.isRequired,
+  /** Additional classname */
   className: PropTypes.string,
+  /** Add classname under select component */
   classNamePrefix: PropTypes.string,
+  /** Initial values */
   defaultValue: PropTypes.string,
+  /** To set disabled field */
   isDisabled: PropTypes.bool,
+  /** Show loading */
   isLoading: PropTypes.bool,
+  /** Show x icon to clear field */
   isClearable: PropTypes.bool,
+  /** Ability to search data option */
   isSearchable: PropTypes.bool,
+  /** List data option for select component */
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
 
 export default Select;

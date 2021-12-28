@@ -1,13 +1,14 @@
 import React from 'react';
 
+import { Meta, ComponentStory } from '@storybook/react';
 import Select from './Select';
 
 export default {
   title: 'Components/Select',
   component: Select,
-};
+} as Meta;
 
-const Template = (args) => (
+const Template: ComponentStory<typeof Select> = (args) => (
   <div style={{ width: '200px' }}>
     <Select {...args} />
   </div>

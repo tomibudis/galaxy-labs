@@ -2,7 +2,9 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { useTransition, animated } from 'react-spring';
 
-const Modal = ({ isVisible }) => {
+import { ModalProps } from '../../interface';
+
+const Modal: React.FC<ModalProps> = ({ isVisible }): JSX.Element => {
   const popUpTransitions = useTransition(isVisible, {
     from: { opacity: 0, transform: 'translateY(20px)' },
     enter: { opacity: 1, transform: 'translateY(40px)', display: 'block' },
@@ -23,18 +25,18 @@ const Modal = ({ isVisible }) => {
             <animated.div
               style={propsStyle}
               className="modal-backdrop"
-              key={key}
+              key={String(key)}
             />
           )
       )}
       {popUpTransitions(
         (propsStyle, item, key) =>
           item && (
-            <div key={key}>
+            <div key={String(key)}>
               <animated.div
                 style={propsStyle}
                 className="modal show"
-                tabIndex="-1"
+                tabIndex={-1}
               >
                 <div className="modal-dialog">
                   <div className="modal-content shadow-sm">
@@ -67,15 +69,15 @@ const Modal = ({ isVisible }) => {
   );
 };
 
-Modal.defaultProps = {
-  isVisible: false,
-};
-
 Modal.propTypes = {
   /** show hide the modal */
   isVisible: PropTypes.bool.isRequired,
   /** func to close the modal */
   onClose: PropTypes.func.isRequired,
+};
+
+Modal.defaultProps = {
+  isVisible: false,
 };
 
 export default Modal;

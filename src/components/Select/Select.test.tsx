@@ -10,8 +10,10 @@ afterEach(() => {
 
 const mockOnClick = jest.fn();
 
-const SelectComponent = (props) => {
-  return <Select {...props} name="select-test" />;
+const mockOptions = [{ label: 'example', value: 'example' }];
+
+const SelectComponent = (props): JSX.Element => {
+  return <Select options={mockOptions} {...props} name="select-test" />;
 };
 
 describe('<Select />', () => {

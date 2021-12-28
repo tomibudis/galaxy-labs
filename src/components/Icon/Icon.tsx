@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { SIZE } from '#constants';
+import { SIZE } from '../../constants';
+import { IconProps } from '../../interface';
 
 import styles from './styles.module.scss';
 
@@ -10,8 +11,8 @@ const path = 'https://raw.githubusercontent.com/twbs/icons/main/icons/';
 const format = '.svg';
 export const ICON_TESTID = 'icon-testid';
 
-const Icon = ({ name, className, size }) => {
-  const source = useMemo(() => {
+const Icon: React.FC<IconProps> = ({ name, className, size }): JSX.Element => {
+  const source: string = useMemo(() => {
     return path + name + format;
   }, [name]);
 

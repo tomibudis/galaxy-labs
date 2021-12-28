@@ -1,17 +1,25 @@
 import React, { useMemo } from 'react';
+
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { THEME, SIZE } from '#constants';
+import { THEME, SIZE } from '#constants/index';
+import { ButtonProps } from '#interface/index';
 
 export const TESTID = {
   BTN: 'btnTestID',
   LOADING: 'btnLoadingTestID',
 };
 
-const Button = ({ isLoading, theme, children, size, ...restProps }) => {
-  const getTheme = useMemo(() => {
-    switch (theme) {
+const Button: React.FC<ButtonProps> = ({
+  isLoading,
+  variant,
+  children,
+  size,
+  ...restProps
+}): JSX.Element => {
+  const getTheme: string = useMemo(() => {
+    switch (variant) {
       case THEME.PRIMARY:
         return 'btn-primary';
       case THEME.SECONDARY:
@@ -23,9 +31,9 @@ const Button = ({ isLoading, theme, children, size, ...restProps }) => {
       default:
         return 'btn-primary';
     }
-  }, [theme]);
+  }, [variant]);
 
-  const getSize = useMemo(() => {
+  const getSize: string = useMemo(() => {
     switch (size) {
       case SIZE.SM:
         return 'btn-sm';
@@ -64,15 +72,16 @@ Button.propTypes = {
   isLoading: PropTypes.bool,
   /** Set size of button */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  /** Set theme of button [string] */
-  theme: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger']),
+  /** Set variant of button [string] */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'warning', 'danger']),
   /** Children node */
   children: PropTypes.node,
 };
 
 Button.defaultProps = {
   size: 'md',
-  theme: 'primary',
+  variant: 'primary',
+  isLoading: false,
 };
 
 export default Button;

@@ -8,3 +8,5 @@ src/assets/
 
 # Ignore unit test
 .test.js
+.test.tsx
+.test.ts
