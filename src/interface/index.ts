@@ -1,5 +1,6 @@
 import React from 'react';
 
+import * as moment from 'moment';
 import { Options } from 'react-select';
 
 type SizeTypes = 'sm' | 'md' | 'lg';
@@ -63,4 +64,16 @@ export interface LabelProps {
   id?: string | undefined;
   htmlFor?: string | undefined;
   isRequired?: boolean | undefined;
+}
+
+export interface CalendarProps {
+  date?: moment.Moment | null | undefined;
+  noBorder?: boolean | undefined;
+  hideKeyboardShortcutsPanel?: boolean | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onDateChange?: (selectedDate: moment.Moment) => moment.Moment;
+  onOutsideClick?: () => React.MouseEvent<HTMLElement>;
+  onPrevMonthClick?: () => moment.Moment;
+  onNextMonthClick?: () => moment.Moment;
+  locale?: string;
 }

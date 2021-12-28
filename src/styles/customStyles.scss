@@ -27,3 +27,36 @@
 .modal-footer {
   border-bottom: none;
 }
+
+// Overide calendar styles from react-dates
+.CalendarDay {
+  font-size: 14px;
+  font-family: 'Graphik-Regular', sans-serif;
+}
+
+.CalendarDay__hovered_span,
+.CalendarDay__hovered_span:active,
+.CalendarDay__hovered_span:hover,
+.CalendarDay__selected_span,
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+  background: $purple-600 !important;
+  border: 1px double $purple-600 !important;
+}
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  font-weight: bold;
+  border: 1px double $purple-600 !important;
+  background: $purple-600 !important;
+}
+
+.DayPicker__withBorder {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.DayPickerNavigation_button {
+  border-radius: 8px !important;
+}

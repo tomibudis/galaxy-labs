@@ -8,6 +8,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 import '../lib/styles.css';
+import 'react-dates/lib/css/_datepicker.css';
 
 export const parameters = {
   previewTabs: {
