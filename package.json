@@ -24,7 +24,8 @@
     "build:types": "npx tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
@@ -48,6 +49,7 @@
     "@storybook/react": "^6.4.9",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/react": "^11.2.7",
+    "@testing-library/jest-dom": "^5.14.1",
     "@typescript-eslint/parser": "^5.7.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^27.0.2",
@@ -82,8 +84,6 @@
     "postcss": "^8.2.9",
     "postcss-modules": "^4.0.0",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-test-renderer": "^17.0.2",
     "rollup": "^2.44.0",
     "rollup-plugin-babel": "^4.4.0",
@@ -98,16 +98,15 @@
     "semantic-release": "^17.4.2",
     "semantic-release-cli": "^5.4.3",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "tsc-alias": "^1.5.0",
     "typescript": "^4.5.3"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
     "bootstrap-icons": "^1.5.0",
     "react-select": "^4.3.1",
-    "react-spring": "^9.2.4",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "react-spring": "^9.2.4"
   },
   "husky": {
     "hooks": {
