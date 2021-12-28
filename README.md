@@ -22,6 +22,10 @@ This project still actively developing for some project over time and there are 
 
 ## Installation
 
+prerequisite
+node: ^14.17.0 
+
+
 ```bash
 npm install --save hellotoms-labs
 ```

@@ -51,3 +51,16 @@ export interface ModalProps {
   size: SizeTypes;
   className: string;
 }
+
+export interface TextProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+export interface LabelProps {
+  className?: string;
+  children: React.ReactNode;
+  id?: string | undefined;
+  htmlFor?: string | undefined;
+  isRequired?: boolean | undefined;
+}
