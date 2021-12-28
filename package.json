@@ -18,7 +18,7 @@
     "lint": "eslint --ignore-path .eslintIgnore . --fix",
     "test": "jest --env=jsdom",
     "deploy-docs": "gh-pages --message \"Automatically updated docs\" -d storybook-static",
-    "storybook": "start-storybook -p 6006 --no-dll -s ./src/assets",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release",
     "build:types": "npx tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json"
