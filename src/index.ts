@@ -8,3 +8,4 @@ export { default as Select } from './components/Select';
 export { default as Text } from './components/Text';
 export { default as Label } from './components/Label';
 export { default as Calendar } from './components/Calendar';
+export { default as Avatar } from './components/Avatar';

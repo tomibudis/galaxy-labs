@@ -13,7 +13,7 @@ const LabelComponent = (props): JSX.Element => {
 
 describe('<Label />', () => {
   it('render component without crashing', () => {
-    render(<LabelComponent />);
+    render(<LabelComponent>Label</LabelComponent>);
     expect(true).toBeTruthy();
   });
   it('match with snapshot file', () => {

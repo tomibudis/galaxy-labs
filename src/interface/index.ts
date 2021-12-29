@@ -77,3 +77,12 @@ export interface CalendarProps {
   onNextMonthClick?: () => moment.Moment;
   locale?: string;
 }
+
+export interface AvatarProps {
+  size?: SizeTypes;
+  name?: string;
+  icon?: string;
+  type: 'rectangle' | 'circle' | undefined;
+  className?: string;
+  img?: string;
+}

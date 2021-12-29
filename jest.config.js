@@ -3,6 +3,7 @@ module.exports = {
   testRunner: 'jest-circus/runner',
   coveragePathIgnorePatterns: ['<rootDir>/src/types', '.stories'],
   setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     '.+\\.(css|sass|scss)$':

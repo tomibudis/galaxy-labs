@@ -10,3 +10,8 @@ export const SIZE = {
   MD: 'md', // medium
   LG: 'lg', // large
 };
+
+export const TYPE_AVATAR = {
+  RECTANGLE: 'rectangle',
+  CIRCLE: 'circle',
+};
