@@ -7,9 +7,17 @@ import {
   Stories,
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
+import '../lib/styles.css';
+import 'react-dates/lib/css/_datepicker.css';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  previewTabs: {
+    canvas: {
+      hidden: true,
+    },
+  },
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  viewMode: 'docs',
   layout: 'centered',
   controls: {
     matchers: {
@@ -26,9 +34,8 @@ export const parameters = {
         <Description />
         <Primary />
         <Stories />
-        PropTypes
         <ArgsTable story={PRIMARY_STORY} />
       </>
     ),
   },
-}
+};

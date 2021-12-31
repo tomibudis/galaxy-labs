@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Avatar /> match with snapshot file 1`] = `
+<body>
+  <div>
+    <div
+      class="avatarCircle sm"
+    >
+      TB
+    </div>
+  </div>
+</body>
+`;

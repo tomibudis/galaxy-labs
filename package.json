@@ -1,45 +1,63 @@
 {
   "name": "galaxy-labs",
   "version": "0.0.3",
-  "description": "base ui elements based on react component",
+  "description": "ui elements based on react component",
   "author": "tomibudis",
   "license": "MIT",
   "repository": "tomibudis/galaxy-labs",
-  "module": "./lib/esm/galaxy-labs.js",
-  "main": "./lib/cjs/galaxy-labs.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "main": "index.js",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
-    "start": "NODE_ENV=dev rollup -c -w",
+    "build": "NODE_ENV=production rollup -c && yarn build:types",
     "prepare": "run-s build && husky install",
     "commit": "npx git-cz",
     "lint": "eslint --ignore-path .eslintIgnore . --fix",
+    "test": "jest --env=jsdom",
     "deploy-docs": "gh-pages --message \"Automatically updated docs\" -d storybook-static",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "build:types": "npx tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/plugin-transform-runtime": "^7.13.10",
-    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^7.3.1",
     "@commitlint/config-conventional": "^7.3.1",
-    "@storybook/addon-actions": "^6.2.2",
-    "@storybook/addon-essentials": "^6.2.2",
-    "@storybook/addon-links": "^6.2.2",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.1",
+    "@semantic-release/npm": "^7.1.1",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.2.2",
+    "@storybook/react": "^6.4.9",
+    "@svgr/webpack": "^5.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@typescript-eslint/parser": "^5.7.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "5.0.0-beta3",
+    "classnames": "^2.3.1",
     "commitizen": "^4.2.3",
     "cross-env": "^7.0.2",
     "css-loader": "^5.2.0",
@@ -57,29 +75,43 @@
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^3.1.0",
     "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.2",
+    "jest-css-modules-transform": "^4.2.1",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
     "lint-staged": "^10.5.4",
-    "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.9",
     "postcss-modules": "^4.0.0",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-moment-proptypes": "^1.8.1",
+    "react-test-renderer": "^17.0.2",
     "rollup": "^2.44.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "sass": "1.32.13",
     "sass-loader": "^10.0.0",
     "semantic-release": "^17.4.2",
     "semantic-release-cli": "^5.4.3",
     "style-loader": "^2.0.0",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.2.1",
-    "@semantic-release/npm": "^7.1.1",
-    "classnames": "^2.3.1",
-    "postcss": "^8.2.9"
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "tsc-alias": "^1.5.0",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.5.0",
+    "moment": "^2.29.1",
+    "react-dates": "^21.8.0",
+    "react-select": "^4.3.1",
+    "react-spring": "^9.2.4"
   },
   "husky": {
     "hooks": {
@@ -88,14 +120,23 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "verbose": true
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@interface": "./src/interface"
   }
 }

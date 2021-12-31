@@ -1,0 +1,43 @@
+.choreStyles {
+  background: #ccc;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.avatarRectangle {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @extend .choreStyles;
+
+  border-radius: 6px;
+}
+
+.avatarCircle {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @extend .choreStyles;
+
+  border-radius: 50%;
+}
+
+.sm {
+  width: 35px;
+  height: 35px;
+}
+
+.md {
+  width: 50px;
+  height: 50px;
+  font-size: large;
+}
+
+.lg {
+  width: 70px;
+  height: 70px;
+  font-size: x-large;
+}

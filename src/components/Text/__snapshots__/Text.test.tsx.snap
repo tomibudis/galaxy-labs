@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> match with snapshot file 1`] = `
+<body>
+  <div>
+    <p
+      class="mb-0 text-danger"
+    >
+      here a text
+    </p>
+  </div>
+</body>
+`;

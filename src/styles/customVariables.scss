@@ -1,0 +1,11 @@
+@import '../assets/scss/variables';
+
+$font-family-sans-serif: 'Graphik-Regular';
+$font-size-base: 0.8rem;
+
+$theme-colors: (
+  "primary": $purple-700,
+  "secondary": $gray-200,
+  "warning": $yellow-500,
+  "danger": $red-500,
+);

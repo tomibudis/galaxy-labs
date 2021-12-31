@@ -1,15 +1,20 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "standard",
-    "standard-react",
-    "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended",
+    "eslint:recommended",
     "prettier/standard",
-    "prettier/react"
+    "prettier/react",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "plugins": ["react", "@typescript-eslint"],
   "env": {
-    "node": true
+    "node": true,
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -23,12 +28,27 @@
       "version": "16"
     }
   },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
     "space-before-function-paren": 0,
     "react/prop-types": 0,
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
     "react/no-unused-prop-types": 0,
-    "import/export": 0
+    "import/export": 0,
+    "no-undef": 0,
+    "@typescript-eslint/no-use-before-define": "off"
   }
 }

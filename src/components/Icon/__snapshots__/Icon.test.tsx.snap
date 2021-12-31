@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> matched with snapshot file 1`] = `
+<body>
+  <div>
+    <img
+      class="iconSm"
+      data-testid="icon-testid"
+      src="https://raw.githubusercontent.com/twbs/icons/main/icons/youtube.svg"
+    />
+  </div>
+</body>
+`;
